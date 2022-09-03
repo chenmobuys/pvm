@@ -26,3 +26,27 @@ cd \path\to\pvm && .\pvm init
 * `pvm use <version>`        Use specify version.
 * `pvm install <version>`    Install specify version.
 * `pvm uninstall <version>`  Uninstall specify version.
+
+## Example
+
+### Install specify version
+
+Install 7 latest version.
+```
+pvm install 7
+```
+
+Install 7 latest nts version.
+```
+pvm install 7-nts
+```
+
+Install 7.0 latest version.
+```
+pvm install 7.0
+```
+
+Install 7.0.0 version.
+```
+pvm install 7.0.0
+```
