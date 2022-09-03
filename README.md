@@ -4,6 +4,8 @@
 
 PHP version manager for windows.
 
+Use [PS2EXE](https://github.com/MScholtes/PS2EXE) convert ps script to exe.
+
 ## Download
 
 https://github.com/chenmobuys/pvm/releases/ 
