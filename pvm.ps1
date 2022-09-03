@@ -23,6 +23,7 @@ function Pvm-Default() {
 function Pvm-Help() {
     Write-Host "Usage:"
     Write-Host "  pvm help                 :  Show help."
+    Write-Host "  pvm init                 :  Initialize when using for the first time."
     Write-Host "  pvm list                 :  List exists versions."
     Write-Host "  pvm installed            :  List installed versions."
     Write-Host "  pvm use <version>        :  Use specify version."
