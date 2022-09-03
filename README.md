@@ -8,7 +8,7 @@ Use [PS2EXE](https://github.com/MScholtes/PS2EXE) convert ps script to exe.
 
 ## Download
 
-https://github.com/chenmobuys/pvm/releases/ 
+[Releases](https://github.com/chenmobuys/pvm/releases)
 
 ## Install 
 
