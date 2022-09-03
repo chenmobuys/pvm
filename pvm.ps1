@@ -116,8 +116,7 @@ function Pvm-Installed() {
     } else {
         $SymbolicLinkTarget = ""
     }
-
-    Pvm-Version
+    
     Write-Host "Installed Versions:"
     foreach($Directory in (Get-ChildItem -Directory $Location | Sort-Object)) {
         if(Select-String -InputObject $Directory -Pattern 'php-\d+.\d+.\d+') {
