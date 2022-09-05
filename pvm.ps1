@@ -349,10 +349,6 @@ function Get-PSScriptRoot() {
         if(!$PSScriptRoot) {
             $PSScriptRoot = Split-Path -Parent -Path ([Environment]::GetCommandLineArgs()[0]) 
         }
-        if(!$PSScriptRoot) {
-            $Path = cmd /c "where pvm"
-            $PSScriptRoot = $Path -Replace "\\pvm.exe",""
-        }
         if (!$PSScriptRoot){ 
             $PSScriptRoot = "." 
         }
