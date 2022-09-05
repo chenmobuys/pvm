@@ -336,11 +336,7 @@ function Pvm-Link($Target) {
     $PVM_HOME = Get-PSScriptRoot
     $PVM_SYMLINK = ((Get-PSScriptRoot),"\php") -Join ""
 
-    if(Test-Path $PVM_SYMLINK) {
-        Remove-Item -Path $PVM_SYMLINK -Recurse -Force
-    }
-
-    Start-Process -Verb RunAs -WindowStyle "Hidden" -Filepath powershell -Argument "New-Item -ItemType SymbolicLink -Path $PVM_SYMLINK -Target $Target"
+    Start-Process -Verb RunAs -WindowStyle "Hidden" -Filepath powershell -Argument "New-Item -ItemType SymbolicLink -Path $PVM_SYMLINK -Target $Target -Force"
 
 }
 
