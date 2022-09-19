@@ -137,8 +137,7 @@ function Pvm-Use([string]$Version) {
     $VersionInfo = Get-Version $Version
     $ExistsVersion = Pvm-Install $Version -ReturnPath
 
-    if($ExistsVersion) {
-        Pvm-Link $ExistsVersion
+    if($ExistsVersion -and (Pvm-Link $ExistsVersion)) {
         Write-Host "Use $Version Success."
     } else {
         Write-Error "Use Version $Version Failed."
@@ -336,7 +335,14 @@ function Pvm-Link($Target) {
     $PVM_HOME = Get-PSScriptRoot
     $PVM_SYMLINK = ((Get-PSScriptRoot),"\php") -Join ""
 
-    Start-Process -Verb RunAs -WindowStyle "Hidden" -Filepath powershell -Argument "New-Item -ItemType SymbolicLink -Path $PVM_SYMLINK -Target $Target -Force"
+    Try {
+        Start-Process -Verb RunAs -WindowStyle "Hidden" -Filepath powershell -Argument "New-Item -ItemType SymbolicLink -Path $PVM_SYMLINK -Target $Target -Force"
+    } Catch {
+        Write-Host $_
+        return $False
+    }
+
+    return $True
 
 }
 
